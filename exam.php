@@ -103,7 +103,7 @@
             <p><strong> Name:</strong> <?php echo htmlspecialchars($name); ?></p>
             <p><strong> Contact:</strong> <?php echo htmlspecialchars($contact); ?></p>
             <p><strong> Pizza Size:</strong> <?php echo htmlspecialchars($pizzasize); ?> (₱<?php echo number_format($basePrice); ?>)</p>
-            <p><strong> Toppings:</strong><br>
+            <p><strong> Toppings:</strong> <br>
                 <?php 
                     if (!empty($toppings)) {
                         foreach ($toppings as $topping) {
@@ -118,6 +118,9 @@
             <p><strong> Toppings Total:</strong> (₱<?php echo number_format($addonsPrice); ?>)</p>
             <p><strong> Drink:</strong> <?php echo htmlspecialchars($drink); ?> (₱<?php echo number_format($drinkPrice); ?>)</p>
             <p><strong> Final Total:</strong> ₱<?php echo number_format($finalTotal); ?></p>
+            <div class="text-center mt-3">
+                <a href="add.php" class="btn btn-success">Order Again</a>
+            </div>
         </div>
     <?php
     }
