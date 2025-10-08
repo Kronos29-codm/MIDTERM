@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +91,6 @@
 
         $addonsPrice = 0;
         foreach ($toppings as $t) {
-            
             $addonsPrice += 30;
         }
 
@@ -105,7 +103,17 @@
             <p><strong> Name:</strong> <?php echo htmlspecialchars($name); ?></p>
             <p><strong> Contact:</strong> <?php echo htmlspecialchars($contact); ?></p>
             <p><strong> Pizza Size:</strong> <?php echo htmlspecialchars($pizzasize); ?> (₱<?php echo number_format($basePrice); ?>)</p>
-            <p><strong> Toppings:</strong> <?php echo !empty($toppings) ? htmlspecialchars(implode(', ', $toppings)) : 'None'; ?></p>
+            <p><strong> Toppings:</strong><br>
+                <?php 
+                    if (!empty($toppings)) {
+                        foreach ($toppings as $topping) {
+                            echo htmlspecialchars($topping) . "<br>";
+                        }
+                    } else {
+                        echo 'None';
+                    }
+                ?>
+            </p>
             <p><strong> Add-ons:</strong> ₱<?php echo number_format($addonsPrice); ?></p>
             <p><strong> Toppings Total:</strong> (₱<?php echo number_format($addonsPrice); ?>)</p>
             <p><strong> Drink:</strong> <?php echo htmlspecialchars($drink); ?> (₱<?php echo number_format($drinkPrice); ?>)</p>
@@ -121,4 +129,5 @@
 </div>
 
 </body>
+
 </html>
